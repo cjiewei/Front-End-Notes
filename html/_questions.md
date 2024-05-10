@@ -76,6 +76,10 @@ switch (document.readyState) {
 
 #### ✅ beforeunload 與 unload 則是在偵測週期的結尾，意即在網頁要被關閉時觸發所有的東西。
 
+#### ✅ DOMContentLoaded 與 load 事件是在偵測 DOM 與網頁的建置完成，是在生命週期的開始。
+
+#### ✅ beforeunload 與 unload 則是在偵測週期的結尾，意即在網頁要被關閉時觸發所有的東西。
+
 <br>
 
 ## `<script>` 標籤應該放在 HTML 甚麼位置? `<link>` 呢?
@@ -125,7 +129,7 @@ HTML 解析的順序是由上往下，瀏覽器在解析 HTML 時，如果遇到
 
 ### `async` 和 `defer` 的不同
 
-### defer
+**<span style="font-size:18px; color:#0e4bad;">defer</span>**
 
 defer 會告訴瀏覽器，不用等 JS 的下載與執行，可以繼續跑 HTML 的解析與 DOM 的建構；在建構 DOM 的同時，會在背景中載入 JS，因
 
@@ -139,7 +143,7 @@ defer 會告訴瀏覽器，不用等 JS 的下載與執行，可以繼續跑 HTM
 
 想要的順序。ex：腳本相依賴，例如 A 依賴 B，就要確保 A 是在 B 之前執行，這時會選擇用 defer。
 
-### async
+**<span style="font-size:18px; color:#0e4bad;">async</span>**
 
 同樣會告訴瀏覽器，在解析 HTML 時不用等 JS 腳本的下載與執行。但跟 defer 不同在於，async 的腳本載入與 HTML 解析是彼此獨立的，
 
