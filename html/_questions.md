@@ -1,8 +1,8 @@
-# 什麼是 HTML 語意化?
+## 什麼是 HTML 語意化?
 
 就是用合乎語意的 HTML 標籤開發，例如：`<form>`、`<table>`，標籤會清楚定義其內容、讓頁面兼具良好的語意和結構。
 
-## 為什麼要使用 HTML 語意化標籤
+### 為什麼要使用 HTML 語意化標籤
 
 - ### 提升 SEO
 
@@ -20,9 +20,9 @@
 
   HTML 語意化網站可以方便其他設備解析內容，ex: screen reader。
 
-# DOMContentLoaded, load, beforeunload, unload 的觸發時機?
+## DOMContentLoaded, load, beforeunload, unload 的觸發時機?
 
-## DOMContentLoaded 與 load 事件
+### DOMContentLoaded 與 load 事件
 
 `DOMContentLoaded` 在 HTML 完全載入、解析後就會觸發，也就是 DOM 建構完成 (CSS、圖片可能還在跑)。
 
@@ -62,7 +62,7 @@ switch (document.readyState) {
 }
 ```
 
-## beforeunload 與 unload 的觸發時機與作用
+### beforeunload 與 unload 的觸發時機與作用
 
 `beforeunload (window.onbeforeunload)` 在使用者離開網頁前被觸發，ex：使用者要去別頁，跳出彈跳視窗說 "確定要離開嗎"
 
@@ -72,13 +72,15 @@ switch (document.readyState) {
 
 是在使用者離開網頁時觸發，我們就可以得知使用者確切是在什麼時機離開了網頁。
 
-#### 總結： DOMContentLoaded 與 load 事件是在偵測 DOM 與網頁的建置完成，是在生命週期的開始；而 beforeunload 與 unload 則是在偵測週期的結尾，意即在網頁要被關閉時觸發所有的東西。
+#### ✅ DOMContentLoaded 與 load 事件是在偵測 DOM 與網頁的建置完成，是在生命週期的開始。
+
+#### ✅ beforeunload 與 unload 則是在偵測週期的結尾，意即在網頁要被關閉時觸發所有的東西。
 
 <br>
 
-# `<script>` 標籤應該放在 HTML 甚麼位置? `<link>` 呢?
+## `<script>` 標籤應該放在 HTML 甚麼位置? `<link>` 呢?
 
-## `<script>`應該放在 HTML 文件的什麼位置
+### `<script>`應該放在 HTML 文件的什麼位置
 
 HTML 解析的順序是由上往下，瀏覽器在解析 HTML 時，如果遇到 `<script>`，會先下載、解析完這些 JS，再往下繼續解析 HTML 其他內
 
@@ -94,7 +96,7 @@ HTML 解析的順序是由上往下，瀏覽器在解析 HTML 時，如果遇到
 
 但是將 `<script>` 放在底部不算最優解，因為網頁一開始會沒有功能性。更好的是透過 **_defer_** 和 **_async_** 一邊解析頁面，一邊下載 JS。
 
-## `<link>` 應該放在 HTML 文件的什麼位置
+### `<link>` 應該放在 HTML 文件的什麼位置
 
 ```HTML
 <html>
@@ -115,13 +117,13 @@ HTML 解析的順序是由上往下，瀏覽器在解析 HTML 時，如果遇到
 
 <br>
 
-# `<script>` 的 async 與 defer 有什麼不同?
+## `<script>` 的 async 與 defer 有什麼不同?
 
-## 為什麼需要 `async` 和 `defer`
+### 為什麼需要 `async` 和 `defer`
 
 這兩個屬性都是在跟瀏覽器說，不用等腳本的載入，繼續建構 DOM。這讓 DOM 的建構與 JS 腳本的載入能夠同步進行，讓使用者體驗更好。
 
-## `async` 和 `defer` 的不同
+### `async` 和 `defer` 的不同
 
 ### defer
 
