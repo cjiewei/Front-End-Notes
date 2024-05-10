@@ -76,10 +76,6 @@ switch (document.readyState) {
 
 #### ✅ beforeunload 與 unload 則是在偵測週期的結尾，意即在網頁要被關閉時觸發所有的東西。
 
-#### ✅ DOMContentLoaded 與 load 事件是在偵測 DOM 與網頁的建置完成，是在生命週期的開始。
-
-#### ✅ beforeunload 與 unload 則是在偵測週期的結尾，意即在網頁要被關閉時觸發所有的東西。
-
 <br>
 
 ## `<script>` 標籤應該放在 HTML 甚麼位置? `<link>` 呢?
